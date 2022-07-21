@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    networks:
+      - venus
+    environment:
+      VIRTUAL_HOST: ${PHPMYADMIN_VIRTUAL_HOST}
+      VIRTUAL_PORT: ${PHPMYADMIN_VIRTUAL_PORT}
+      LETSENCRYPT_HOST: ${PHPMYADMIN_LETSENCRYPT_HOST}
+      LETSENCRYPT_EMAIL: ${PHPMYADMIN_LETSENCRYPT_EMAIL}
+      PMA_ARBITRARY: ${PHPMYADMIN_PMA_ARBITRARY}
+
+networks:
+  venus:
+    external: true
