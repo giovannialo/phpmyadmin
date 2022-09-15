@@ -4,11 +4,13 @@ PHPMyAdmin para Docker usando Nginx Proxy + Let's Encrypt.
 
 ## Dependências
 
+* Docker Compose;
 * Repositório [Nginx Proxy + Let's Encrypt](https://github.com/giovannialo/nginx-proxy-letsencrypt).
 
 #### Observação
 
-É necessário realizar os procedimentos de instalação do repositório acima antes de iniciar o processo de instalação abaixo.
+É necessário realizar os procedimentos de instalação do repositório acima antes de iniciar o processo de instalação
+abaixo.
 
 ## Instalação
 
@@ -16,16 +18,13 @@ Siga as etapas abaixo para um correto funcionamento do sistema.
 
 ### Variáveis de ambiente
 
-Faça uma cópia do arquivo **.env.example** para **.env** e configure as variáveis conforme as configurações do seu servidor.
-
-#### Exemplo
+Na pasta raiz crie um arquivo chamado **.env**, copie e cole o bloco de código abaixo e configure as variáveis.
 
 ```dotenv
-PHPMYADMIN_VIRTUAL_HOST=phpmyadmin.meudominio.com.br
-PHPMYADMIN_VIRTUAL_PORT=80
-PHPMYADMIN_LETSENCRYPT_HOST=phpmyadmin.meudominio.com.br
-PHPMYADMIN_LETSENCRYPT_EMAIL=email@exemplo.com
-PHPMYADMIN_PMA_ARBITRARY=1
+VIRTUAL_HOST=phpmyadmin.local
+VIRTUAL_PORT=80
+LETSENCRYPT_EMAIL=email@exemplo.com
+PMA_ARBITRARY=1
 ```
 
 ### Container
